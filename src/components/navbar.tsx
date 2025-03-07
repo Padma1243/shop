@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-gray-800 text-white p-4 px-6 flex justify-between items-center">
+    <nav className="bg-yellow-800 text-white p-4 px-6 flex justify-between items-center">
       {/* Logo / Home Link */}
       <Link href="/" className="text-xl font-bold">
         E-Commerce

@@ -2,8 +2,14 @@ import { useRouter } from "next/router";
 import Image from "next/image";
 
 const products = [
-  { id: 1, name: "Smartphone", price: 10000, image: "/images/smartphone.jpg", description: "Latest 5G smartphone with 128GB storage." },
-  { id: 2, name: "shoe", price: 1500, image: "/images/shoose2.jpg", description: "Runnning shoes." },
+  { id: 1, name: "Smartphone", price: 20000, image: "/images/smartphone.jpg", description: "Latest 5G smartphone with 128GB storage." },
+  { id: 2, name: "shoe", price: 5000, image: "/images/shoose2.jpg", description: "Runnning shoes." },
+  { id: 3, name: "headphone", price: 2500, image: "/images/headphone1.jpg", description: "wireless connection"},
+  { id: 4, name: "labtop", price: 45000, image: "/images/labtop2.jpg", description: "8GB to 16GB of RAM provides a good balance of performance and value. Power users and professionals may benefit from 32GB "},
+  { id: 5, name: "watch", price: 4000, image: "/images/watch.jpg", description: " SKMEI Super Amoled 3D Curved Display LS05 Smartwatch  (Black Strap, Medium)"},
+  { id: 6, name: "LED TV", price: 50000, image: "/images/LEDTV.jpg", description:"Samsung 40 inches Full HD LED TV 40N5000"},
+
+  
   
 ];
 

@@ -12,9 +12,12 @@ interface ProductProps {
 }
 
 const products: ProductProps[] = [
-  { id: 1, name: "Smartphone", price: "$10000", description: "Latest 5G smartphone with 128GB storage.", image: "/images/smartphone.jpg" },
-  { id: 2, name: "Shoe", price: "$1500", description: "Runnning shoe", image: "/images/shoose2.jpg" },
-  
+  { id: 1, name: "Smartphone", price: "$20000", description: "Latest 5G smartphone with 128GB storage.", image: "/images/smartphone.jpg" },
+  { id: 2, name: "Shoe", price: "$5000", description: "Runnning shoe", image: "/images/shoose2.jpg" },
+  { id: 3, name: "headphone", price: "$2500", description: "wireless conection", image: "/images/headphone1.jpg" },
+  { id: 4, name: "labtop", price: "$45000" , description: "8GB to 16GB of RAM provides a good balance of performance and value. Power users and professionals may benefit from 32GB ",image: "/images/labtop2.jpg"},
+  { id: 5, name: "watch", price: "$40000" , description:"SKMEI Super Amoled 3D Curved Display LS05 Smartwatch  (Black Strap, Medium)" ,image: "/images/watch.jpg"}, 
+  { id: 6, name: "LED TV", price: "$50000" , description: "Samsung 40 inches Full HD LED TV 40N5000 ",image: "/images/LEDTV.jpg"},
 ];
 
 export default function ProductsPage() {
@@ -23,7 +26,7 @@ export default function ProductsPage() {
       <Navbar />
       <div className="container mx-auto p-4">
         <h1 className="text-3xl font-bold mb-4">All Products</h1>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
           {products.map((product) => (
             <div key={product.id} className="border p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold">{product.name}</h2>
