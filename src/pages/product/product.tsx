@@ -1,7 +1,7 @@
 import React from "react";
 import Link from "next/link";
 import Navbar from "../../components/navbar";
-import Image from 'next/image';
+import Image from "next/image";
 
 interface ProductProps {
   id: number;
@@ -27,7 +27,7 @@ export default function ProductsPage() {
           {products.map((product) => (
             <div key={product.id} className="border p-4 rounded-lg shadow-md">
               <h2 className="text-xl font-semibold">{product.name}</h2>
-              {product.image && <img src={product.image} alt={product.name} className="w-full h-40 object-cover mt-2" />}
+              {product.image && <Image src={product.image} alt="Product Image" width={500} height={500} /> }
               <p className="text-gray-700">{product.price}</p>
               <Link href={`/product/${product.id}`}>
               
