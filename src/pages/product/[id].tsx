@@ -1,4 +1,5 @@
 import { useRouter } from "next/router";
+import Image from "next/image";
 
 const products = [
   { id: 1, name: "Smartphone", price: 10000, image: "/images/smartphone.jpg", description: "Latest 5G smartphone with 128GB storage." },
@@ -15,7 +16,7 @@ const ProductDetail = () => {
 
   return (
     <div className="p-6">
-      <img src={product.image} alt={product.name} className="w-80 h-64 object-cover" />
+      <Image src={product.image} alt={product.name} width={320} height={256} className="rounded-lg" />
       <h1 className="text-2xl font-bold mt-4">{product.name}</h1>
       <p className="text-gray-600 text-lg">${product.price}</p>
       <p className="mt-4">{product.description}</p>

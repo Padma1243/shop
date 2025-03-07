@@ -3,7 +3,7 @@ import { useState } from "react";
 
 import Link from "next/link";
 
-import { Menu, X } from "lucide-react"; // Icons for mobile menu
+import { Menu, X } from "lucide-react";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
