@@ -1,13 +1,9 @@
-import Link from "next/link";
+// import Link from "next/link";
 import Navbar from "../../components/navbar";
 import PromoBanner from "@/components/banner";
 import Article from "@/components/article";
 import React from 'react';
 import Footer from "@/components/footer";
-const products = [
-  { id: 1, name: "Product 1", price: 10 },
-  { id: 2, name: "Product 2", price: 15 },
-];
 
 export default function Home() {
   return (
