@@ -9,7 +9,7 @@ export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
 
   return (
-    <nav className="bg-yellow-800 text-white p-4 px-6 flex justify-between items-center">
+    <nav className="bg-gray-800 text-white p-4 px-6 flex justify-between items-center">
       {/* Logo / Home Link */}
       <Link href="/" className="text-xl font-bold">
         E-Commerce
@@ -32,11 +32,9 @@ export default function Navbar() {
        
         
         <Link href="/card/card">
-          <span className="hover:text-gray-300 transition">Card</span>
+          <span className="hover:text-gray-300 transition"> 🛒</span>
         </Link>
-        <Link href="/contact/contact">
-          <span className="hover:text-gray-300 transition">Contact</span>
-        </Link>
+        
         
         <Link href="/login/login">
           <span className="hover:text-gray-300 transition">Login</span>
