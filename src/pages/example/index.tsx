@@ -1,22 +1,26 @@
-// import Link from "next/link";
-import Navbar from "../../components/navbar";
+ import Link from "next/link";
+import Layout from "@/components/layout";
 import PromoBanner from "@/components/banner";
 import Article from "@/components/article";
 import React from 'react';
-import Footer from "@/components/footer";
+import ImageCarousel from "@/components/imagecarousel";
+
+
 
 export default function Home() {
   return (
+    <Layout>
     <div>
-      <Navbar />
+     
       <div className="container mx-auto p-4">
-        <h1 className="text-2xl font-bold mb-4">E-Commerce Store</h1>
+        <ImageCarousel />
         
-             
+       
       </div>
       <PromoBanner />
       <Article />
-      <Footer />
+      
     </div>
+    </Layout>
   );
 }

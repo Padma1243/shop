@@ -1,9 +1,9 @@
 "use client"
-// import Image from "next/image";
+ import Image from "next/image";
 import { useRouter } from "next/navigation";
 import React from "react";
-// import Link from "next/link";
-// import { Import } from "lucide-react";
+import Link from "next/link";
+import { Import } from "lucide-react";
 
 
 
@@ -17,7 +17,7 @@ export default function Home() {
     }}>
     <div>
       {/* Overlay for better readability */}
-      <div className="absolute inset-0 bg-black bg-opacity-50"></div>
+      <div className="absolute inset-0  bg-opacity-8"></div>
 
       {/* Content */}
       <div className="relative text-center text-white px-6">

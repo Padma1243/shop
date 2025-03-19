@@ -18,37 +18,35 @@ const Footer: React.FC = () => {
             <h2 className="text-lg font-semibold text-white">Quick Links</h2>
             <ul className="mt-2 space-y-2">
               <li>
-                <a href="#" className="hover:text-violet-500">Home</a>
+                <a href="/example" className="hover:text-violet-500">Home</a>
               </li>
               <li>
-                <a href="#" className="hover:text-violet-500">Shop</a>
+                <a href="/product/product" className="hover:text-violet-500">shop</a>
               </li>
               <li>
-                <a href="#" className="hover:text-violet-500">About Us</a>
+                <a href="/about/about" className="hover:text-violet-500">About</a>
               </li>
-              <li>
-                <a href="#" className="hover:text-violet-500">Contact</a>
-              </li>
+             
             </ul>
           </div>
 
           {/* Social Media Links */}
           <div>
             <h2 className="text-lg font-semibold text-white">Follow Us</h2>
-            <div className="flex mt-2 space-x-4">
-              <a href="#" className="hover:text-violet-500">
-                <i className="fab fa-facebook-f"></i>
+            <ul className="mt-2 space-y-2">
+              <a href="https://www.facebook.com" className="hover:text-violet-500">
+                <li className="fab fa-facebook-f">facebook</li>
               </a>
-              <a href="#" className="hover:text-violet-500">
-                <i className="fab fa-twitter"></i>
+              <a href="https://twitter.com" className="hover:text-violet-500">
+                <li className="fab fa-twitter">twitter</li>
               </a>
-              <a href="#" className="hover:text-violet-500">
-                <i className="fab fa-instagram"></i>
+              <a href="https://www.instagram.com" className="hover:text-violet-500">
+                <li className="fab fa-instagram">instagram</li>
               </a>
-              <a href="#" className="hover:text-violet-500">
-                <i className="fab fa-linkedin-in"></i>
+              <a href="https://in.linkedin.com" className="hover:text-violet-500">
+                <li className="fab fa-linkedin-in">linkedIn</li>
               </a>
-            </div>
+            </ul>
           </div>
         </div>
 
