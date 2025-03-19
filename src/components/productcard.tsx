@@ -2,33 +2,29 @@
 import React from "react";
 import { Heart } from "lucide-react";
 import { useWishlist } from "@/context/wishlist-context";
-import { toast } from "sonner"; // ✅ Import toast for notifications
+import { toast } from "sonner";
 
 interface ProductCardProps {
   id: number;
   name: string;
   image: string;
+  price: number;
 }
 
-export default function ProductCard({ id, name, image }: ProductCardProps) {
-  const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
+export default function ProductCard({ id, name, image, price }: ProductCardProps) {
+  const { wishlist, toggleWishlist } = useWishlist();
 
   const isWishlisted = wishlist.includes(id);
 
   const handleWishlist = () => {
-    if (isWishlisted) {
-      removeFromWishlist(id);
-      toast.error("Removed from Wishlist ❌");
-    } else {
-      addToWishlist(id);
-      toast.success("Added to Wishlist! ✅");
-    }
+    toggleWishlist(id);
   };
 
   return (
     <div className="border p-4 rounded-lg shadow-md">
       <img src={image} alt={name} className="w-full h-40 object-cover rounded" />
       <h3 className="mt-2 text-lg font-semibold">{name}</h3>
+      <p className="text-gray-700">₹{price}</p>
 
       {/* Wishlist Button */}
       <button

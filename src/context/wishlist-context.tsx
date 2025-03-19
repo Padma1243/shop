@@ -7,6 +7,7 @@ interface WishlistContextType {
   wishlist: number[];
   addToWishlist: (id: number) => void;
   toggleWishlist: (id: number) => void;
+  removeFromWishlist: (id: number) => void; // ✅ Ensure this exists
 }
 
 // Create Context
@@ -33,6 +34,12 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
     }
   };
 
+  // ✅ Remove from Wishlist
+  const removeFromWishlist = (id: number) => {
+    setWishlist((prev) => prev.filter((item) => item !== id));
+    toast.error("Removed from Wishlist ❌");
+  };
+
   // ✅ Toggle Wishlist (Adds if missing, removes if present)
   const toggleWishlist = (id: number) => {
     setWishlist((prev) => {
@@ -47,7 +54,7 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   return (
-    <WishlistContext.Provider value={{ wishlist, addToWishlist, toggleWishlist }}>
+    <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist, toggleWishlist }}>
       {children}
     </WishlistContext.Provider>
   );
