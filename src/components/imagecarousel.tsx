@@ -28,7 +28,7 @@ const ImageCarousel = () => {
   }, [nextSlide]); // ✅ Only re-run when `nextSlide` changes
 
   return (
-    <div className="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+    <div className="relative w-full  overflow-hidden  shadow-lg">
       <div className="w-full h-64 md:h-80 lg:h-96 relative">
         <Image
           src={images[currentIndex]}

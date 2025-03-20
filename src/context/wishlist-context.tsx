@@ -5,9 +5,9 @@ import { toast } from "sonner"; // ✅ Import toast for notifications
 // Define Wishlist Context Type
 interface WishlistContextType {
   wishlist: number[];
-  addToWishlist: (id: number) => void;
+  // addToWishlist: (id: number) => void;
   toggleWishlist: (id: number) => void;
-  removeFromWishlist: (id: number) => void; // ✅ Ensure this exists
+  // removeFromWishlist: (id: number) => void; // ✅ Ensure this exists
 }
 
 // Create Context
@@ -27,18 +27,18 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
   }, [wishlist]);
 
   // ✅ Add to Wishlist
-  const addToWishlist = (id: number) => {
-    if (!wishlist.includes(id)) {
-      setWishlist([...wishlist, id]);
-      toast.success("Added to Wishlist! ✅");
-    }
-  };
+  // const addToWishlist = (id: number) => {
+  //   if (!wishlist.includes(id)) {
+  //     setWishlist([...wishlist, id]);
+  //     toast.success("Added to Wishlist! ✅");
+  //   }
+  // };
 
   // ✅ Remove from Wishlist
-  const removeFromWishlist = (id: number) => {
-    setWishlist((prev) => prev.filter((item) => item !== id));
-    toast.error("Removed from Wishlist ❌");
-  };
+  // const removeFromWishlist = (id: number) => {
+  //   setWishlist((prev) => prev.filter((item) => item !== id));
+  //   toast.error("Removed from Wishlist ❌");
+  // };
 
   // ✅ Toggle Wishlist (Adds if missing, removes if present)
   const toggleWishlist = (id: number) => {
@@ -54,7 +54,7 @@ export const WishlistProvider = ({ children }: { children: React.ReactNode }) =>
   };
 
   return (
-    <WishlistContext.Provider value={{ wishlist, addToWishlist, removeFromWishlist, toggleWishlist }}>
+    <WishlistContext.Provider value={{ wishlist, toggleWishlist }}>
       {children}
     </WishlistContext.Provider>
   );
