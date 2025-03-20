@@ -1,14 +1,21 @@
 "use client";
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import Link from "next/link";
 import { Menu, X, ShoppingCart, Heart } from "lucide-react";
 import { useCart } from "@/context/cart-context";
-import { useWishlist } from "@/context/wishlist-context"; // ✅ Correct import
+import { useWishlist } from "@/context/wishlist-context";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const { totalItems } = useCart();
-  const { wishlist } = useWishlist(); // ✅ Use wishlist from context
+  const { wishlist } = useWishlist();
+
+  // Fix: Use local state to avoid hydration issues
+  const [wishlistCount, setWishlistCount] = useState(0);
+
+  useEffect(() => {
+    setWishlistCount(wishlist.length);
+  }, [wishlist]);
 
   return (
     <nav className="bg-gray-800 text-white z-50 w-full fixed p-4 px-6 flex justify-between items-center">
@@ -34,7 +41,6 @@ export default function Navbar() {
         <Link href="/login/login">
           <span className="hover:text-gray-300 transition">Login</span>
         </Link>
-       
 
         {/* Cart Icon with Count */}
         <Link href="/cart">
@@ -52,9 +58,9 @@ export default function Navbar() {
         <Link href="/wishlist">
           <div className="relative cursor-pointer">
             <Heart size={24} className="text-gray-300 hover:text-red-400 transition" />
-            {wishlist.length > 0 && ( // ✅ Fixed: Use wishlist.length
+            {wishlistCount > 0 && (
               <span className="absolute -top-2 -right-2 bg-red-500 text-white text-xs px-2 py-0.5 rounded-full">
-                {wishlist.length} {/* ✅ Display wishlist count */}
+                {wishlistCount}
               </span>
             )}
           </div>
@@ -63,4 +69,3 @@ export default function Navbar() {
     </nav>
   );
 }
-

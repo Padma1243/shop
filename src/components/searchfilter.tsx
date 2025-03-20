@@ -51,7 +51,7 @@ export default function SearchFilter({
   };
 
   return (
-    <div className="relative w-full max-w-md ml-auto">
+    <div className="relative w-full max-w-md mx-auto">
       <form onSubmit={handleSearch} className="flex items-center">
         <div className={cn("flex items-center w-full border rounded-lg transition-all overflow-hidden pl-3")}>
           <Search className="h-4 w-4 text-muted-foreground shrink-0" />

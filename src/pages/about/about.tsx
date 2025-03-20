@@ -20,15 +20,15 @@ const About = () => {
         About Us
       </motion.h1>
 
+      {/* About Section */}
       <section className="flex flex-col md:flex-row items-center gap-8">
         <motion.div className="w-full md:w-1/2" whileHover={{ scale: 1.05 }}>
           <Image
             src="/images/about.jpg"
             alt="About Us"
-            layout="responsive"
             width={500}
             height={300}
-            className="rounded-lg shadow-lg"
+            className="rounded-lg shadow-lg w-full h-auto"
           />
         </motion.div>
         <motion.div
@@ -46,6 +46,7 @@ const About = () => {
         </motion.div>
       </section>
 
+      {/* Mission Section */}
       <motion.section
         className="mt-12 text-center"
         initial="hidden"
@@ -59,7 +60,14 @@ const About = () => {
         </p>
       </motion.section>
 
-      <section className="mt-12">
+      {/* Why Choose Us Section */}
+      <motion.section
+        className="mt-12"
+        initial="hidden"
+        animate="visible"
+        variants={fadeIn}
+        transition={{ staggerChildren: 0.2 }}
+      >
         <h2 className="text-3xl font-semibold text-center mb-6">Why Choose Us?</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
           {[
@@ -70,24 +78,22 @@ const About = () => {
             <motion.div
               key={index}
               className="p-6 border rounded-lg shadow-md text-center bg-white hover:shadow-lg transform hover:scale-105"
-              initial="hidden"
-              animate="visible"
               variants={fadeIn}
-              transition={{ duration: 0.6, delay: index * 0.2 }}
             >
               <h3 className="text-xl font-semibold">{item.icon} {item.title}</h3>
               <p className="text-gray-600 mt-2">{item.desc}</p>
             </motion.div>
           ))}
         </div>
-      </section>
+      </motion.section>
 
+      {/* Customer Testimonials */}
       <motion.section
         className="mt-12 text-center"
         initial="hidden"
         animate="visible"
         variants={fadeIn}
-        transition={{ duration: 1 }}
+        transition={{ staggerChildren: 0.3 }}
       >
         <h2 className="text-3xl font-semibold mb-6">What Our Customers Say</h2>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -98,12 +104,9 @@ const About = () => {
             <motion.div
               key={index}
               className="p-6 border rounded-lg shadow-md bg-white hover:shadow-lg transform hover:scale-105"
-              initial="hidden"
-              animate="visible"
               variants={fadeIn}
-              transition={{ duration: 0.6, delay: index * 0.3 }}
             >
-              <p className="italic text-gray-700">"{review.quote}"</p>
+              <p className="italic text-gray-700">&ldquo;{review.quote}&rdquo;</p>
               <h4 className="mt-4 font-semibold">- {review.name}</h4>
             </motion.div>
           ))}
